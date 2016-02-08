@@ -132,7 +132,6 @@
 
                         android:ems="10"
                         android:hint="@string/phone"
-                        android:inputType="textPassword"
 
                         />
 
@@ -141,7 +140,6 @@
                         style="@style/form_input_textarea"
                         android:ems="10"
                         android:hint="@string/adress"
-                        android:inputType="textPassword"
 
                         />
 

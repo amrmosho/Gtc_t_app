@@ -4,7 +4,11 @@
     <string name="newuers">New Usre</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
+
+
     <string name="password">Password</string>
+
+
     <string name="repassword">RrPassword</string>
     <string name="send">Send</string>
     <string name="phone">Phone</string>
@@ -23,7 +27,13 @@
     <string name="myres">My Reservatios</string>
     <string name="title_activity_item_map">Map</string>
     <string name="showmap">showMap</string>
-    <string name="aboutgtc">About GTC</string>
+    <string name="aboutgtc">
+
+         \n
+        \n
+
+
+    </string>
     <string name="aboutus">About US</string>
 
 </resources>

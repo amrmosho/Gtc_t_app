@@ -66,21 +66,63 @@
         <RelativeLayout
             style="@style/main_data"
 
-            android:layout_below="@+id/navbar">
+            android:layout_below="@+id/navbar"
+            android:layout_alignParentBottom="true">
 
 
             <TextView
-                android:layout_width="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/aboutgtc"
+                android:text="Amani Aziz Al-Amri   \n
+                                                  201216017"
                 android:id="@+id/textView2"
-                android:layout_alignParentTop="true"
+                android:textSize="15dp"
+
+
+                android:layout_below="@+id/imageView2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+android:textSize="15dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Zahouah Hayel Al-Balwei
+                 \n                                                  201216019"
+                android:id="@+id/textView4"
+                android:layout_below="@+id/textView2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+
+            <TextView
+                android:textSize="17dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Supervised by:\n
+                          Dr - Marwan Al-Sayyed \n"
+                android:id="@+id/textView3"
+                android:layout_below="@+id/textView4"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true" />
+                android:layout_marginTop="21dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:src="@drawable/flogo"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
         </RelativeLayout>
     </RelativeLayout>
 
