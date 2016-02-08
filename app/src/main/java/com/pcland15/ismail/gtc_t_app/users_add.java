@@ -59,12 +59,12 @@ public class users_add extends AppCompatActivity {
 
 
 
-
-        db.addData.put("new_uesr_name", gettxt(R.id.new_uesr_name));
-        db.addData.put("new_uesr_email", gettxt(R.id.new_uesr_email));
-        db.addData.put("new_uesr_password", gettxt(R.id.new_uesr_password));
-        db.addData.put("new_uesr_phone", gettxt(R.id.new_uesr_phone));
-        db.addData.put("new_uesr_address", gettxt(R.id.new_uesr_address));
+        db.addData.put("title", gettxt(R.id.new_uesr_name));
+        db.addData.put("user_name", gettxt(R.id.new_uesr_name));
+        db.addData.put("email", gettxt(R.id.new_uesr_email));
+        db.addData.put("password", gettxt(R.id.new_uesr_password));
+        db.addData.put("phone", gettxt(R.id.new_uesr_phone));
+        db.addData.put("adress", gettxt(R.id.new_uesr_address));
 
 
 
