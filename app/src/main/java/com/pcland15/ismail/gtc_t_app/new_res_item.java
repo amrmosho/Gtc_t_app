@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.pcland15.ismail.gtc_t_app.libs.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class new_res_item extends AppCompatActivity {
@@ -154,6 +155,21 @@ public class new_res_item extends AppCompatActivity {
     }
 
 
+
+    void clearcData(ArrayList<Integer> data){
+        try {
+            for( int id :data) {
+                TextView a = (TextView) findViewById(id);
+                a.setText("");
+
+            }
+        } catch (Exception e) {
+
+        }
+
+
+    }
+
     public void naw_ResSend(View view) {
 
         dbOperations db = new dbOperations(xmlDataModel.resTable, "insert");
@@ -178,6 +194,9 @@ public class new_res_item extends AppCompatActivity {
 
         db.addData.put("arrv_time", gettxt(R.id.ri_arr_time));
         db.addData.put("leave_time", gettxt(R.id.ri_lev_time));
+        ArrayList<Integer> a=new ArrayList<>() ;
+
+
 
 
         HashMap<String, HashMap<String, String>> userdata = db.commit();
@@ -185,9 +204,17 @@ public class new_res_item extends AppCompatActivity {
         if (userdata.size() > 1) {
             Toast.makeText(this, this.getString(R.string.msg_succ), Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, this.getString(R.string.msg_errorlogin), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, this.getString(R.string.msg_succ), Toast.LENGTH_SHORT).show();
         }
 
+        a.add(R.id.ri_name);
+        a.add(R.id.ri_phone);
+        a.add(R.id.ri_numod_room);
+        a.add(R.id.ri_numod_person);
+        a.add(R.id.ri_arr_time);
+        a.add(R.id.ri_lev_time);
+
+        clearcData(a);
 
     }
 

@@ -51,9 +51,12 @@ public class res_item extends AppCompatActivity {
         Intent t = new Intent(this, splesh.class);
         startActivity(t);
     }
-
     HashMap<String, String> datares;
     String itemID = "";
+
+
+
+
 
     void updateData() {
 

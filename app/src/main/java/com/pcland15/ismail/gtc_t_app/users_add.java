@@ -6,10 +6,12 @@ import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.pcland15.ismail.gtc_t_app.libs.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class users_add extends AppCompatActivity {
@@ -50,6 +52,19 @@ public class users_add extends AppCompatActivity {
    }
 
 
+    void clearcData(ArrayList<Integer> data){
+        try {
+            for( int id :data) {
+                TextView a = (TextView) findViewById(id);
+                a.setText("");
+
+            }
+        } catch (Exception e) {
+
+        }
+
+
+    }
 
     public void naw_userRegSend(View view) {
 
@@ -70,14 +85,24 @@ public class users_add extends AppCompatActivity {
 
 
 
+
         HashMap<String, HashMap<String, String>> userdata = db.commit();
 
         if (userdata.size() > 1) {
             Toast.makeText(this, this.getString(R.string.msg_succ), Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, this.getString(R.string.msg_errorlogin), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, this.getString(R.string.msg_succ), Toast.LENGTH_SHORT).show();
         }
 
+
+        ArrayList<Integer> a=new ArrayList<>() ;
+        a.add(R.id.new_uesr_name);
+        a.add(R.id.new_uesr_email);
+        a.add(R.id.new_uesr_password);
+        a.add(R.id.new_uesr_phone);
+        a.add(R.id.new_uesr_address);
+
+        clearcData(a);
 
 
     }
