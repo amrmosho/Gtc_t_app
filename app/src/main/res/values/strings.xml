@@ -1,3 +1,29 @@
 <resources>
-    <string name="app_name">Gtc_t_app</string>
+    <string name="app_name">gtc</string>
+    <string name="login_title">Login</string>
+    <string name="newuers">New Usre</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="repassword">RrPassword</string>
+    <string name="send">Send</string>
+    <string name="phone">Phone</string>
+    <string name="adress">Adress</string>
+
+    <string name="msg_errorlogin">msg_errorlogin</string>
+
+    <string name="msg_error">msg_error</string>
+
+    <string name="msg_succ">msg_succ</string>
+    <string name="numroom">#Rooms</string>
+    <string name="num_per">#Person</string>
+    <string name="arr_time">Arrive Time</string>
+    <string name="lev_time">Leave Time</string>
+    <string name="home">Home</string>
+    <string name="myres">My Reservatios</string>
+    <string name="title_activity_item_map">Map</string>
+    <string name="showmap">showMap</string>
+    <string name="aboutgtc">About GTC</string>
+    <string name="aboutus">About US</string>
+
 </resources>

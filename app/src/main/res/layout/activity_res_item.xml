@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".new_res_item">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/logo_l" />
+
+    <RelativeLayout
+
+        style="@style/main_page"
+        android:layout_below="@+id/imageView"
+
+        >
+
+
+        <RelativeLayout
+            android:id="@+id/navbar"
+            style="@style/navbar"
+            android:layout_width="match_parent">
+
+            <ImageButton
+                android:id="@+id/back_bt"
+                style="@style/navbar_back_button"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/logout_bt"
+                android:layout_toStartOf="@+id/logout_bt"
+                android:onClick="goBack"
+
+                />
+
+            <ImageButton
+                android:id="@+id/home_bt"
+                style="@style/navbar_home_button"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:onClick="geHome" />
+
+            <ImageButton
+                android:id="@+id/logout_bt"
+                style="@style/navbar_logout_button"
+
+                android:layout_toLeftOf="@+id/home_bt"
+                android:layout_toStartOf="@+id/home_bt"
+                android:onClick="goOut"
+
+                />
+
+            <TextView
+                android:id="@+id/ic_title"
+                style="@style/navbar_title"
+                android:text="@string/myres" />
+
+            <ImageView
+                android:id="@+id/nav_line"
+                style="@style/line"
+                android:layout_below="@+id/ic_title"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/main_data"
+
+            android:layout_below="@+id/navbar"
+            android:id="@+id/relativeLayout">
+
+
+            <RelativeLayout
+                android:layout_height="150dp"
+                style="@style/min_main_page"
+                android:id="@+id/data_h"
+                >
+
+                <ImageView
+                    android:id="@+id/v_ri_item_image"
+                    android:layout_height="100dp"
+                    android:src="@drawable/logo_l"
+
+                    android:layout_width="match_parent"
+                    style="@style/items_list_image"
+                    android:layout_alignParentBottom="true"
+
+                    android:onClick="gotoItem"
+
+                    />
+
+                <TextView
+                    android:id="@+id/v_ri_item_title"
+                    style="@style/items_list_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Large Text"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+
+                android:layout_below="@+id/data_h"
+                android:paddingBottom="5dp">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/v_ri_name"
+                        style="@style/form_label_text"
+
+                        android:layout_gravity="center_horizontal"
+                        android:ems="10"
+
+                        android:hint="@string/name"
+                        android:inputType="textPersonName" />
+
+
+                    <TextView
+                        android:id="@+id/v_ri_phone"
+                        style="@style/form_label_text"
+
+
+                        android:ems="10"
+                        android:hint="@string/phone"
+
+                        />
+
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:id="@+id/numbers"
+                        >
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/v_ri_numod_room"
+                                style="@style/form_label_text"
+
+
+                                android:ems="10"
+                                android:hint="@string/numroom"
+                                android:inputType="number"
+                                android:layout_width="120dp"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/v_ri_numod_person"
+                                style="@style/form_label_text"
+                                android:layout_width="120dp"
+                                android:ems="10"
+                                android:hint="@string/num_per"
+                                android:inputType="number"
+
+                                android:text="ggg" />
+
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        >
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <TextView
+                                android:id="@+id/v_ri_arr_time"
+                                style="@style/form_label_text"
+
+                                android:layout_width="120dp"
+                                android:ems="10"
+                                android:hint="@string/arr_time"
+                                android:inputType="datetime"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/v_ri_lev_time"
+                                style="@style/form_label_text"
+                                android:layout_width="120dp"
+
+                                android:ems="10"
+                                android:hint="@string/lev_time"
+                                android:inputType="datetime"
+                                />
+
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+
+                        android:layout_below="@+id/numbers"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+
+                        >
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <CheckBox
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:text="Childerrn"
+                                android:id="@+id/v_ri_childern"
+
+                                />
+
+                            <CheckBox
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/v_ri_teen"
+                                android:text="Teen"
+
+
+
+
+                                />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+
+
+
+                </LinearLayout>
+
+
+
+
+
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+

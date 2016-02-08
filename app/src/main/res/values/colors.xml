@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="textColorPrimary">#2A2727</color>
+    <color name="colorPrimary">#381902</color>
+    <color name="colorPrimaryDark">#036c94</color>
+    <color name="navigationBarColor">#03adc7</color>
+    <color name="colorAccent">#f4d4d8</color>
+    <color name="yallowButton">#f9cc86</color>
+    <color name="yallowButtonColor">#C43D4A</color>
+    <color name="colorPrimaryStrok">#0595ab</color>
+    <color name="yallowButtonDarck">#a76803</color>
+    <color name="nullcolor">#00000000</color>
 </resources>

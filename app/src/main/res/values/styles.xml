@@ -1,11 +1,227 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowIsFloating">false</item>
+
+
+
     </style>
 
+
+    <style name="gtc" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/in_bg</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="gtcout" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/out_bg</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="navbar">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_alignParentTop">true</item>
+
+
+
+
+    </style>
+
+
+    <style name="navbar_button">
+
+
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:foregroundGravity">center_vertical|center_horizontal</item>
+
+        <item name="android:background">@null</item>
+
+        <item name="android:textColor">@null</item>
+        <item name="android:textSize">1dp</item>
+        <item name="android:shadowColor">@null</item>
+
+    </style>
+
+
+    <style name="navbar_back_button" parent="navbar_button">
+        <item name="android:foreground">@drawable/bck_bt</item>
+        <item name="android:src">@drawable/bck_bt</item>
+    </style>
+    <style name="navbar_home_button" parent="navbar_button">
+        <item name="android:foreground">@drawable/home_bt</item>
+        <item name="android:src">@drawable/home_bt</item>
+
+
+    </style>
+    <style name="navbar_logout_button" parent="navbar_button">
+        <item name="android:foreground">@drawable/logout_bt</item>
+        <item name="android:src">@drawable/logout_bt</item>
+    </style>
+
+
+    <style name="navbar_title" >
+
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentStart">true</item>
+
+
+
+
+
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+
+
+
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+
+
+    <style name="line">
+
+
+
+
+
+
+        <item name="android:layout_marginTop">5dp</item>
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+
+        <item name="android:background">@color/colorPrimary</item>
+
+    </style>
+
+
+    <style name="main_page">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/panel_shape</item>
+
+    </style>
+    <style name="min_main_page" parent="main_page">
+        <item name="android:layout_height">220dp</item>
+
+
+    </style>
+
+
+
+    <style name="main_data">
+
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+
+    </style>
+
+
+
+
+    <style name="form_input">
+        <item name="android:background">@drawable/txt_input_shape</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="form_input_text" parent="form_input">
+
+        <item name="android:layout_height">45dp</item>
+
+    </style>
+    <style name="form_input_textarea" parent="form_input">
+
+        <item name="android:layout_height">100dp</item>
+
+    </style>
+
+
+    <style name="form_label_text" parent="form_input">
+        <item name="android:background">#20ffffff</item>
+
+        <item name="android:layout_height">45dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+
+
+
+
+    <style name="button">
+
+        <item name="android:background">@drawable/button_shape</item>
+        <item name="android:layout_height">45dp</item>
+
+        <item name="android:layout_width">wrap_content</item>
+
+        <item name="android:layout_gravity">right</item>
+
+
+        <item name="android:layout_margin">10dp</item>
+
+
+    </style>
+
+
+    <style name="likebutton" parent="button">
+
+        <item name="android:background">@color/nullcolor</item>
+
+        <item name="android:textColor">@color/colorPrimary</item>
+
+
+    </style>
+
+
+
+
+    <style name="items_list_title">
+        <item name="android:textColor">@color/colorPrimary</item>
+
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:textSize">25dp</item>
+
+
+    </style>
+
+
+    <style name="items_list_image">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentStart">true</item>
+
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:layout_marginLeft">0dp</item>
+
+
+    </style>
+
+    <style name="items_list_area">
+        <item name="android:background">@drawable/panel_shape</item>
+
+    </style>
 </resources>
