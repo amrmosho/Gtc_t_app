@@ -60,7 +60,7 @@ public class users_add extends AppCompatActivity {
 
 
         db.addData.put("title", gettxt(R.id.new_uesr_name));
-        db.addData.put("user_name", gettxt(R.id.new_uesr_name));
+        db.addData.put("username", gettxt(R.id.new_uesr_name));
         db.addData.put("email", gettxt(R.id.new_uesr_email));
         db.addData.put("password", gettxt(R.id.new_uesr_password));
         db.addData.put("phone", gettxt(R.id.new_uesr_phone));
