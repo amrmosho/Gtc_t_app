@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -83,18 +84,20 @@ public class new_res_item extends AppCompatActivity {
         hide(R.id.ri_lev_time);
         chhide(R.id.ri_childern);
         chhide(R.id.ri_teen);
-
+        hidebt(R.id.new_res_bt);
 
         switch (datai.get("group")){
             //Hotels
             case "1":
             case "2":
+
+                showbt(R.id.new_res_bt);
                 show(R.id.ri_name);
                 show(R.id.ri_phone);
                 show(R.id.ri_numod_room);
                 show(R.id.ri_numod_person);
-                chhide(R.id.ri_childern);
-                chhide(R.id.ri_teen);
+                showch(R.id.ri_childern);
+                showch(R.id.ri_teen);
                 show(R.id.ri_arr_time);
                 show(R.id.ri_lev_time);
                 break;
@@ -116,6 +119,9 @@ public class new_res_item extends AppCompatActivity {
          a.setText(value);
 
     }
+
+
+
     String gettxt(int id) {
 
         EditText a = (EditText) findViewById(id);
@@ -128,6 +134,31 @@ public class new_res_item extends AppCompatActivity {
        a.setVisibility(View.INVISIBLE);
 
     }
+
+    void showch(int id) {
+
+        CheckBox a = (CheckBox) findViewById(id);
+        a.setVisibility(View.VISIBLE);
+
+    }
+
+
+
+    void hidebt(int id) {
+
+        Button a = (Button) findViewById(id);
+        a.setVisibility(View.INVISIBLE);
+
+    }
+
+    void showbt(int id) {
+
+        Button a = (Button) findViewById(id);
+        a.setVisibility(View.VISIBLE);
+
+    }
+
+
 
 
     void show(int id) {

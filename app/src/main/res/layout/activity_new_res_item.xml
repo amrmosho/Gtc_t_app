@@ -266,7 +266,7 @@ android:id="@+id/numbers"
                     </RelativeLayout>
 
                     <Button
-                        android:id="@+id/button8"
+                        android:id="@+id/new_res_bt"
                         style="@style/button"
                         android:onClick="naw_ResSend"
                         android:text="@string/send"
