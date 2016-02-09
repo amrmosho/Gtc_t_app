@@ -71,43 +71,36 @@ public class new_res_item extends AppCompatActivity {
         ui.loadImage(this, i, datai.get("image"));
 
 
-/*
-
-<option selected="" value="1">Hotels</option>
-<option value="2">Restaurants</option>
-<option value="3">ATM</option>
-<option value="1000">My Reservations</option>
-<option value="10001">Settings</option></select> */
 
 
-        switch (myID){
+
+
+        hide(R.id.ri_name);
+        hide(R.id.ri_phone);
+        hide(R.id.ri_numod_room);
+        hide(R.id.ri_numod_person);
+        hide(R.id.ri_arr_time);
+        hide(R.id.ri_lev_time);
+        chhide(R.id.ri_childern);
+        chhide(R.id.ri_teen);
+
+
+        switch (datai.get("group")){
             //Hotels
             case "1":
-                break;
-            //Restaurants
             case "2":
-
-                hide(R.id.ri_lev_time);
-
-
-
-
-
-
-                break;
-            //ATM
-            case "3":
-                hide(R.id.ri_name);
-                hide(R.id.ri_phone);
-                hide(R.id.ri_numod_room);
-                hide(R.id.ri_numod_person);
+                show(R.id.ri_name);
+                show(R.id.ri_phone);
+                show(R.id.ri_numod_room);
+                show(R.id.ri_numod_person);
                 chhide(R.id.ri_childern);
                 chhide(R.id.ri_teen);
-                hide(R.id.ri_arr_time);
-                hide(R.id.ri_lev_time);
-
+                show(R.id.ri_arr_time);
+                show(R.id.ri_lev_time);
                 break;
 
+            case "3":
+                break;
             default:
                 break;
 
@@ -133,6 +126,14 @@ public class new_res_item extends AppCompatActivity {
 
         EditText a = (EditText) findViewById(id);
        a.setVisibility(View.INVISIBLE);
+
+    }
+
+
+    void show(int id) {
+
+        EditText a = (EditText) findViewById(id);
+        a.setVisibility(View.VISIBLE);
 
     }
     void chhide(int id) {
