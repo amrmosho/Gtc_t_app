@@ -88,10 +88,10 @@ public class res_data extends AppCompatActivity {
                     HashMap<String, String> datai = allData.get("0");
 
 
-
-
-
                     cat_list c = new cat_list();
+
+try{
+
                     c.setTitle(datai.get("title"));
                     c.setImage(datai.get("image"));
 
@@ -99,11 +99,8 @@ public class res_data extends AppCompatActivity {
                     c.setID(data.get(k).get("id"));
 
 
-                    String p =datai.get("positions");
-                    String[] ps = p.split(",");
-
                     c.setDes("Date :" + data.get(k).get("arrv_time"));
-
+}catch (Exception e){}
                     mydata.add(c);
                 }
             }
