@@ -70,14 +70,21 @@ public class users_add extends AppCompatActivity {
 
 
         dbOperations db = new dbOperations(xmlDataModel.userTable, "insert");
+        String  name =gettxt(R.id.new_uesr_name).trim();
+        String  email =gettxt(R.id.new_uesr_email).trim();
+        String  passwored =gettxt(R.id.new_uesr_password).trim();
+
+if (email.equalsIgnoreCase("")||name.equalsIgnoreCase("")||passwored.equalsIgnoreCase("")){
+
+    Toast.makeText(this,"inputs Empty", Toast.LENGTH_SHORT).show();
 
 
+}else{
 
-
-        db.addData.put("title", gettxt(R.id.new_uesr_name));
-        db.addData.put("username", gettxt(R.id.new_uesr_name));
-        db.addData.put("email", gettxt(R.id.new_uesr_email));
-        db.addData.put("password", gettxt(R.id.new_uesr_password));
+        db.addData.put("title", name);
+        db.addData.put("username",name);
+        db.addData.put("email", email);
+        db.addData.put("password", passwored);
         db.addData.put("phone", gettxt(R.id.new_uesr_phone));
         db.addData.put("adress", gettxt(R.id.new_uesr_address));
 
@@ -103,7 +110,7 @@ public class users_add extends AppCompatActivity {
         a.add(R.id.new_uesr_address);
 
         clearcData(a);
-
+}
 
     }
 }
