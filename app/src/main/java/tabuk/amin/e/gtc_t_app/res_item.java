@@ -96,12 +96,12 @@ public class res_item extends AppCompatActivity {
 
 
 
-        updayettxt(R.id.v_ri_name, R.string.name + " : ", "title");
-        updayettxt(R.id.v_ri_phone, R.string.phone + " : ", "phonenumber");
-        updayettxt(R.id.v_ri_numod_room, R.string.numroom + " : ", "plc_number");
-        updayettxt(R.id.v_ri_numod_person, R.string.num_per + " : ", " :gst_umber");
-        updayettxt(R.id.v_ri_arr_time, R.string.arr_time + " : ", "arrv_time");
-        updayettxt(R.id.v_ri_lev_time, R.string.lev_time + " : ", "leave_time");
+        updayettxt(R.id.v_ri_name, "Name  : ", "title");
+        updayettxt(R.id.v_ri_phone,  "Phone : ", "phonenumber");
+        updayettxt(R.id.v_ri_numod_room,   "#Room : ", "plc_number");
+        updayettxt(R.id.v_ri_numod_person,  "#person : ", "gst_umber");
+        updayettxt(R.id.v_ri_arr_time, "Arrive Time : ", "arrv_time");
+        updayettxt(R.id.v_ri_lev_time, "Leave Time : ", "leave_time");
 
 
         chtxt(R.id.v_ri_childern, "childern");
