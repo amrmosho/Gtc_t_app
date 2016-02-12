@@ -20,20 +20,20 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/gtc">
-        <activity android:name=".login"></activity>
-        <activity android:name=".items_categories" />
-        <activity android:name=".users_add" />
-        <activity android:name=".new_res_item" />
-        <activity android:name=".item_data" />
-        <activity android:name=".res_item"></activity>
-        <activity android:name=".users_items" />
-        <activity android:name=".home"></activity>
-        <activity android:name=".res_data"></activity>
+        <activity android:name="tabuk.amin.e.gtc_t_app.login"></activity>
+        <activity android:name="tabuk.amin.e.gtc_t_app.items_categories" />
+        <activity android:name="tabuk.amin.e.gtc_t_app.users_add" />
+        <activity android:name="tabuk.amin.e.gtc_t_app.new_res_item" />
+        <activity android:name="tabuk.amin.e.gtc_t_app.item_data" />
+        <activity android:name="tabuk.amin.e.gtc_t_app.res_item"></activity>
+        <activity android:name="tabuk.amin.e.gtc_t_app.users_items" />
+        <activity android:name="tabuk.amin.e.gtc_t_app.home"></activity>
+        <activity android:name="tabuk.amin.e.gtc_t_app.res_data"></activity>
 
 
 
 
-        <activity android:name=".splesh">
+        <activity android:name="tabuk.amin.e.gtc_t_app.splesh">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,10 +53,10 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".item_map"
+            android:name="tabuk.amin.e.gtc_t_app.item_map"
             android:label="@string/title_activity_item_map"></activity>
-        <activity android:name=".about"></activity>
-        <activity android:name=".test"></activity>
+        <activity android:name="tabuk.amin.e.gtc_t_app.about"></activity>
+        <activity android:name="tabuk.amin.e.gtc_t_app.test"></activity>
     </application>
 
 

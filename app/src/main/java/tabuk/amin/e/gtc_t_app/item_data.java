@@ -1,4 +1,4 @@
-package com.pcland15.ismail.gtc_t_app;
+package tabuk.amin.e.gtc_t_app;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,9 +8,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.pcland15.ismail.gtc_t_app.libs.*;
+import com.pcland15.ismail.gtc_t_app.R;
 
 import java.util.HashMap;
+
+import tabuk.amin.e.gtc_t_app.libs.dbOperations;
+import tabuk.amin.e.gtc_t_app.libs.ui;
+import tabuk.amin.e.gtc_t_app.libs.xmlDataModel;
 
 public class item_data extends AppCompatActivity {
 

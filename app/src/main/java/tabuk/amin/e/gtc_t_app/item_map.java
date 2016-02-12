@@ -1,4 +1,4 @@
-package com.pcland15.ismail.gtc_t_app;
+package tabuk.amin.e.gtc_t_app;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -9,6 +9,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.pcland15.ismail.gtc_t_app.R;
 
 public class item_map extends FragmentActivity implements OnMapReadyCallback {
 

@@ -1,4 +1,4 @@
-package com.pcland15.ismail.gtc_t_app;
+package tabuk.amin.e.gtc_t_app;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,10 +9,14 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.pcland15.ismail.gtc_t_app.libs.*;
+import com.pcland15.ismail.gtc_t_app.R;
 
 
 import java.util.HashMap;
+
+import tabuk.amin.e.gtc_t_app.libs.dbOperations;
+import tabuk.amin.e.gtc_t_app.libs.ui;
+import tabuk.amin.e.gtc_t_app.libs.xmlDataModel;
 
 public class res_item extends AppCompatActivity {
     String myID = "";
@@ -51,6 +55,9 @@ public class res_item extends AppCompatActivity {
         Intent t = new Intent(this, splesh.class);
         startActivity(t);
     }
+
+
+
     HashMap<String, String> datares;
     String itemID = "";
 
@@ -65,23 +72,36 @@ public class res_item extends AppCompatActivity {
         HashMap<String, HashMap<String, String>> allDatares = dbres.commit();
         datares = allDatares.get("0");
 
+
+
+
         itemID = datares.get("item_id");
         dbOperations dbi = new dbOperations(xmlDataModel.itemsTables, "get_data");
         dbi.where = "id='" + itemID + "'";
         HashMap<String, HashMap<String, String>> allData = dbi.commit();
         HashMap<String, String> datai = allData.get("0");
 
+
+
+
+
         TextView t = (TextView) findViewById(R.id.v_ri_item_title);
         t.setText(datai.get("title"));
         ImageView i = (ImageView) findViewById(R.id.v_ri_item_image);
         ui.loadImage(this, i, datai.get("image"));
 
-        gettxt(R.id.v_ri_name,R.string.name + " : title");
-        gettxt(R.id.v_ri_phone, R.string.phone + " : phonenumber");
-        gettxt(R.id.v_ri_numod_room,R.string.numroom + " : plc_number");
-        gettxt(R.id.v_ri_numod_person,R.string.num_per+ " : gst_umber");
-        gettxt(R.id.v_ri_arr_time, R.string.arr_time + " : arrv_time");
-        gettxt(R.id.v_ri_lev_time, R.string.lev_time+ " : leave_time");
+
+
+
+
+
+
+        updayettxt(R.id.v_ri_name, R.string.name + " : ", "title");
+        updayettxt(R.id.v_ri_phone, R.string.phone + " : ", "phonenumber");
+        updayettxt(R.id.v_ri_numod_room, R.string.numroom + " : ", "plc_number");
+        updayettxt(R.id.v_ri_numod_person, R.string.num_per + " : ", " :gst_umber");
+        updayettxt(R.id.v_ri_arr_time, R.string.arr_time + " : ", "arrv_time");
+        updayettxt(R.id.v_ri_lev_time, R.string.lev_time + " : ", "leave_time");
 
 
         chtxt(R.id.v_ri_childern, "childern");
@@ -89,11 +109,11 @@ public class res_item extends AppCompatActivity {
 
     }
 
-    void gettxt(int id, String valuename) {
+    void updayettxt(int id,String mylable, String valuename) {
 
         try {
             TextView a = (TextView) findViewById(id);
-            a.setText(datares.get(valuename));
+            a.setText(mylable+datares.get(valuename));
 
 
         } catch (Exception e) {

@@ -1,4 +1,4 @@
-package com.pcland15.ismail.gtc_t_app;
+package tabuk.amin.e.gtc_t_app;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,10 +12,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.pcland15.ismail.gtc_t_app.libs.*;
+import com.pcland15.ismail.gtc_t_app.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import tabuk.amin.e.gtc_t_app.libs.dbOperations;
+import tabuk.amin.e.gtc_t_app.libs.ui;
+import tabuk.amin.e.gtc_t_app.libs.xmlDataModel;
 
 public class new_res_item extends AppCompatActivity {
     String myID = "";
@@ -33,7 +37,10 @@ public class new_res_item extends AppCompatActivity {
         }
 
         myID = getIntent().getStringExtra("id");
+
+
         settext(R.id.ri_name ,  dbOperations.userData.get("title"));
+
 
         settext(R.id.ri_phone ,  dbOperations.userData.get("phone"));
 
@@ -64,8 +71,12 @@ public class new_res_item extends AppCompatActivity {
 
         dbOperations dbi = new dbOperations(xmlDataModel.itemsTables, "get_data");
         dbi.where = "id=" + this.myID;
+
+
         HashMap<String, HashMap<String, String>> allData = dbi.commit();
+
         HashMap<String, String> datai = allData.get("0");
+
         TextView t = (TextView) findViewById(R.id.ri_item_title);
         t.setText(datai.get("title"));
         ImageView i = (ImageView) findViewById(R.id.ri_item_image);

@@ -1,4 +1,4 @@
-package com.pcland15.ismail.gtc_t_app;
+package tabuk.amin.e.gtc_t_app;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,10 +9,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.pcland15.ismail.gtc_t_app.libs.*;
+import com.pcland15.ismail.gtc_t_app.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import tabuk.amin.e.gtc_t_app.libs.dbOperations;
+import tabuk.amin.e.gtc_t_app.libs.xmlDataModel;
 
 public class users_add extends AppCompatActivity {
 
@@ -70,6 +73,9 @@ public class users_add extends AppCompatActivity {
 
 
         dbOperations db = new dbOperations(xmlDataModel.userTable, "insert");
+
+
+
         String  name =gettxt(R.id.new_uesr_name).trim();
         String  email =gettxt(R.id.new_uesr_email).trim();
         String  passwored =gettxt(R.id.new_uesr_password).trim();
@@ -85,6 +91,8 @@ if (email.equalsIgnoreCase("")||name.equalsIgnoreCase("")||passwored.equalsIgnor
         db.addData.put("username",name);
         db.addData.put("email", email);
         db.addData.put("password", passwored);
+
+
         db.addData.put("phone", gettxt(R.id.new_uesr_phone));
         db.addData.put("adress", gettxt(R.id.new_uesr_address));
 
@@ -94,6 +102,9 @@ if (email.equalsIgnoreCase("")||name.equalsIgnoreCase("")||passwored.equalsIgnor
 
 
         HashMap<String, HashMap<String, String>> userdata = db.commit();
+
+
+
 
         if (userdata.size() > 1) {
             Toast.makeText(this, this.getString(R.string.msg_succ), Toast.LENGTH_SHORT).show();

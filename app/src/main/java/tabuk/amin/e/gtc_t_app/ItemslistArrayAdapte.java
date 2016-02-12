@@ -1,4 +1,4 @@
-package com.pcland15.ismail.gtc_t_app;
+package tabuk.amin.e.gtc_t_app;
 
 
 import android.app.Activity;
@@ -7,24 +7,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.pcland15.ismail.gtc_t_app.libs.*;
+import com.pcland15.ismail.gtc_t_app.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import tabuk.amin.e.gtc_t_app.libs.cat_list;
+import tabuk.amin.e.gtc_t_app.libs.ui;
 
-class home_ItemslistArrayAdapte extends ArrayAdapter<cat_list> {
-    public int resLayout = R.layout.home_items_list;
+
+class ItemslistArrayAdapte extends ArrayAdapter<cat_list> {
+    public int resLayout = R.layout.items_list;
 
     Context context;
     List<cat_list> objects;
     List<cat_list> fobjects;
 
-    public home_ItemslistArrayAdapte(Context context, int resource, List<cat_list> objects) {
+    public ItemslistArrayAdapte(Context context, int resource, List<cat_list> objects) {
         super(context, resource, objects);
 
         this.objects = new ArrayList<cat_list>();
@@ -49,13 +51,16 @@ class home_ItemslistArrayAdapte extends ArrayAdapter<cat_list> {
 
         t.setText(cat.toString());
 
+        TextView tdis = (TextView) view.findViewById(R.id.list_items_dis);
+        tdis.setText(""+cat.getDes()+"");
+
         ui.loadImage(context, (ImageView) view.findViewById(R.id.list_items_image), cat.getImage());
 
 
         return view;
     }
 
-    private itemsSearch filter;
+ /*   private itemsSearch filter;
 
 
     @Override
@@ -107,5 +112,5 @@ class home_ItemslistArrayAdapte extends ArrayAdapter<cat_list> {
         }
     }
 
-
+*/
 }

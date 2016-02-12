@@ -1,4 +1,4 @@
-package com.pcland15.ismail.gtc_t_app;
+package tabuk.amin.e.gtc_t_app;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,12 +9,16 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.pcland15.ismail.gtc_t_app.libs.*;
+import com.pcland15.ismail.gtc_t_app.R;
 
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import tabuk.amin.e.gtc_t_app.libs.cat_list;
+import tabuk.amin.e.gtc_t_app.libs.dbOperations;
+import tabuk.amin.e.gtc_t_app.libs.xmlDataModel;
 
 public class res_data extends AppCompatActivity {
     String myID = "";
@@ -31,6 +35,8 @@ public class res_data extends AppCompatActivity {
         }
 
         myID = dbOperations.userData.get("id");
+
+
         getData();
 
     }
@@ -65,8 +71,10 @@ public class res_data extends AppCompatActivity {
         t.setText(dbOperations.userData.get("title"));
 
 
-        dbOperations db = new dbOperations(xmlDataModel.resTable, "get_data");
 
+
+
+        dbOperations db = new dbOperations(xmlDataModel.resTable, "get_data");
         db.where = "user_id='" + this.myID.trim()+"'";
 
 
@@ -76,7 +84,10 @@ public class res_data extends AppCompatActivity {
 
         HashMap<String, HashMap<String, String>> data = db.commit();
         if (data.size() > 0) {
+
             final List<cat_list> mydata = new ArrayList<>();
+
+
             for (String k : data.keySet()) {
                 if (!k.equalsIgnoreCase("log")) {
 
@@ -86,6 +97,9 @@ public class res_data extends AppCompatActivity {
                     dbi.where = "id='" +data.get(k).get("item_id")+"'";
                     HashMap<String, HashMap<String, String>> allData = dbi.commit();
                     HashMap<String, String> datai = allData.get("0");
+
+
+
 
 
                     cat_list c = new cat_list();

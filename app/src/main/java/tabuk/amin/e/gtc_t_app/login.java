@@ -1,4 +1,4 @@
-package com.pcland15.ismail.gtc_t_app;
+package tabuk.amin.e.gtc_t_app;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,9 +8,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.pcland15.ismail.gtc_t_app.libs.*;
+import com.pcland15.ismail.gtc_t_app.R;
 
 import java.util.HashMap;
+
+import tabuk.amin.e.gtc_t_app.libs.dbOperations;
+import tabuk.amin.e.gtc_t_app.libs.xmlDataModel;
 
 public class login extends AppCompatActivity {
 
@@ -22,6 +25,7 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login);
 
 
@@ -35,21 +39,43 @@ public class login extends AppCompatActivity {
         email = (EditText) findViewById(R.id.login_email);
         password = (EditText) findViewById(R.id.login_password);
 
-
+/*
         email.setText("admin");
-        password.setText("admin");
+        password.setText("admin");*/
 
     }
 
 
 
+
+    public void togoNewUser(View view) {
+        Intent t = new Intent(this, users_add.class);
+        startActivity(t);
+    }
+
+    public void gotoAboutUS(View view) {
+
+        Intent t = new Intent(this, about.class);
+        startActivity(t);
+    }
+
+
+
+
     public void login(View view) {
+
         dbOperations db = new dbOperations(xmlDataModel.userTable, "login");
+
+
 
         db.addData.put("email", email.getText().toString());
         db.addData.put("password", password.getText().toString());
 
+
         HashMap<String, HashMap<String, String>> userdata = db.commit();
+
+
+
 
         if (userdata.size() > 1) {
             dbOperations.userData = userdata.get("0");
@@ -63,17 +89,5 @@ public class login extends AppCompatActivity {
         }
 
 
-    }
-
-
-    public void togoNewUser(View view) {
-        Intent t = new Intent(this, users_add.class);
-        startActivity(t);
-    }
-
-    public void gotoAboutUS(View view) {
-
-        Intent t = new Intent(this, about.class);
-        startActivity(t);
     }
 }

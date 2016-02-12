@@ -1,4 +1,4 @@
-package com.pcland15.ismail.gtc_t_app.libs;
+package tabuk.amin.e.gtc_t_app.libs;
 
 import android.util.Log;
 
@@ -37,11 +37,18 @@ public class dbOperations {
 
     public String table = "";
     public String type = "";
-    public String where = "";
-
-    public static HashMap<String, String> userData;
     public HashMap<String, String> addData;
     public HashMap<String, String> addImageData;
+
+
+
+    public String where = "";
+
+
+    public static HashMap<String, String> userData;
+
+
+
 
     public dbOperations(String table, String type) {
         this.table = table;
@@ -55,11 +62,18 @@ public class dbOperations {
     }
 
     MultipartEntity geturldata() {
+
+
         MultipartEntity entity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE);
         try {
             entity.addPart("set", new StringBody(this.type));
+
+
             entity.addPart("where", new StringBody(this.where));
             entity.addPart("table", new StringBody(this.table));
+
+
+
             if (this.addData != null) {
                 for (String k : this.addData.keySet()) {
                     entity.addPart(k, new StringBody(this.addData.get(k)));
@@ -89,21 +103,45 @@ public class dbOperations {
     public HashMap<String, HashMap<String, String>> getFromserver() {
 
         StringBuilder stringBuilder = new StringBuilder();
+
+
+
         HttpClient httpClient = new DefaultHttpClient();
+
+
+
+
+
         HttpPost httppost = new HttpPost(config.webServiecURL);
+
+
+
+
         try {
             httppost.setEntity(geturldata());
 
+
+
+
             HttpResponse response = httpClient.execute(httppost);
+
+
+
 
             StatusLine statusLine = response.getStatusLine();
 
             int statusCode = statusLine.getStatusCode();
             if (statusCode == 200) {
                 HttpEntity entity = response.getEntity();
+
+
                 InputStream inputStream = entity.getContent();
+
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(inputStream));
+
+
+
                 String line;
                 while ((line = reader.readLine()) != null) {
                     stringBuilder.append(line);
@@ -125,7 +163,9 @@ public class dbOperations {
 
     HashMap<String, HashMap<String, String>> jsonStringToArray(String jsonString) {
         //  ArrayList<String> stringArray = new ArrayList<String>();
-        HashMap<String, String> map = new HashMap<String, String>();
+     //   HashMap<String, String> map = new HashMap<String, String>();
+
+
         HashMap<String, HashMap<String, String>> r = new HashMap<String, HashMap<String, String>>();
         try {
             JSONObject c = new JSONObject(jsonString);
@@ -137,12 +177,17 @@ public class dbOperations {
             if (c.has("row")) {
                 r.put("0", jsoneTomap(c.getJSONObject("row")));
             }
+
+
+
             if (c.has("data")) {
                 JSONArray data = c.getJSONArray("data");
                 for (int i = 0; i < data.length(); i++) {
                     r.put(i + "", jsoneTomap(data.getJSONObject(i)));
                 }
             }
+
+
 
         } catch (JSONException e) {
 
@@ -153,10 +198,6 @@ public class dbOperations {
 
         return r;
     }
-
-
-
-
 
 
     HashMap<String, String> jsoneTomap(JSONObject thisdata) {
@@ -225,7 +266,12 @@ public class dbOperations {
 
 
             response = client.execute(httppost);
+
+
+
             HttpEntity entity = response.getEntity();
+
+
             InputStream stream = entity.getContent();
             int b;
             while ((b = stream.read()) != -1) {
@@ -250,7 +296,7 @@ public class dbOperations {
 
             JSONObject distance = steps.getJSONObject("distance");
 
-            Log.i("Distance", distance.toString());
+          //  Log.i("Distance", distance.toString());
             dist = Double.parseDouble(distance.getString("text").replaceAll("[^\\.0123456789]","") );
 
         } catch (JSONException e) {
